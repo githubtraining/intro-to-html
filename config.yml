@@ -5,50 +5,85 @@ template:
   name: intro-html
   url: https://github.com/githubtraining/intro-to-html.git
   description: 'A robot powered training repository :robot:'
+before:
+  - type: createIssue
+
 steps:
   - title: Turn on GitHub Pages
     description: Turn on GitHub Pages in the settings page of the repository.
     event: deployment
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1
+    actions:
+      - type: createIssue
+
   - title: Open a pull request
     description: Open a pull request.
     event: pull_request.opened
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1
+    actions:
+      - type: createIssue
+
   - title: Build the HTML document structure
     description: Follow the instructions to write the base structure of your HTML file
     event: pull_request.synchronize
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/2
+    actions:
+      - type: createIssue
+
   - title: Add a title tag
     description: Add a title tag
     event: pull_request.synchronize
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/2
+    actions:
+      - type: createIssue
+
   - title: Merge your first Pull Request
     description: Merge your Pull Request
     event: pull_request.closed
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/2
+    actions:
+      - type: createIssue
+
   - title: Change your username to an h1 tag
     description: Change your username to an h1 tag
     event: pull_request
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/3
+    actions:
+      - type: createIssue
+
   - title: Add an image
     description: Add an image
     event: pull_request.synchronize
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/3
+    actions:
+      - type: createIssue
+
   - title: Merge your second Pull Request
     description: Merge your Pull Request
     event: pull_request.closed
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/3
+    actions:
+      - type: createIssue
+
   - title: Create a list
     description: Create a list
     event: pull_request
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/4
+    actions:
+      - type: createIssue
+
   - title: Add links
     description: Add links
     event: pull_request.synchronize
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/4
+    actions:
+      - type: createIssue
+
   - title: Merge your third Pull Request
     description: Merge your Pull Request
     event: pull_request.closed
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/4
+    actions:
+      - type: createIssue
 tags: [ GitHub Pages ]
 order: 6
