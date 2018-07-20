@@ -31,4 +31,4 @@ This file contains the course flow for the "Protected Branches and CODEOWNERS" c
 | -------------- | ------------ |
 | student creates PR based on issue | app responds [with](responses/09-add-links.md) , on fail [use](responses/08e-list.md)  |
 | student adds links to the list | on fail app uses [this](responses/09e-links.md) ; on success app uses [this](responses/10-merge-third-pr.md) |
-| student merges PR | app merges the add-style branch in the background, creates an issue [with](responses/11-link-css.md) and a response on that issue [with](responses/12-graceful-exit.md)  |
+| student merges PR | app merges the add-style branch in the background, creates an issue [with](responses/11-link-css.md)   |
