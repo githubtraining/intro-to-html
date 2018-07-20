@@ -1,54 +1,225 @@
-title: "Introduction to HTML"
-tagline: "Learn you some HTML"
-description: "If you are looking for a quick and fun introduction to HTML, you've found it. This class will get you started using HTML in less than an hour."
+title: Introduction to HTML
+tagline: Learn you some HTML
+description: If you are looking for a quick and fun introduction to HTML, you've found it. This class will get you started using HTML in less than an hour.
 template:
-  name: "intro-html"
-  url: "https://github.com/githubtraining/intro-to-html.git"
-  description: "A robot powered training repository :robot:"
+  name: intro-html
+  url: https://github.com/githubtraining/intro-to-html-template.git
+  description: 'A robot powered training repository :robot:'
+before:
+  - type: createIssue
+    title: Welcome
+    body: 01_welcome.md
+
 steps:
   - title: Turn on GitHub Pages
-    description: "Turn on GitHub Pages in the settings page of the repository."
+    description: Turn on GitHub Pages in the settings page of the repository.
     event: deployment
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1
+    actions:
+      - type: respond
+        with: 00-openapr.md
+        issue: Welcome
+
   - title: Open a pull request
-    description: "Open a pull request."
+    description: Open a pull request.
     event: pull_request.opened
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1
+    actions:
+      - type: respond
+        with: 02-html-structure.md
+
   - title: Build the HTML document structure
-    description: "Follow the instructions to write the base structure of your HTML file"
+    description: Follow the instructions to write the base structure of your HTML file
     event: pull_request.synchronize
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/2
+    actions:
+      - type: getFileContents
+        filename: index.html
+        action_id: index_file
+      - type: htmlContainsTag
+        html: '%actions.index_file%'
+        tag: html
+        action_id: contains_html
+      - type: htmlContainsTag
+        html: '%actions.index_file%'
+        tag: body
+        action_id: contains_body
+      - type: gate
+        gates:
+          - left: '%actions.contains_html%'
+          - left: '%actions.contains_body%'
+        else:
+          type: respond
+          with: 03e-add-html.md
+      - type: respond
+        with: 03-title-tag.md
+        
+
   - title: Add a title tag
-    description: "Add a title tag"
+    description: Add a title tag
     event: pull_request.synchronize
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/2
+    actions:
+      - type: getFileContents
+        filename: index.html
+        action_id: index_file
+      - type: htmlContainsTag
+        html: '%actions.index_file%'
+        tag: head
+        action_id: contains_head
+      - type: htmlContainsTag
+        html: '%actions.index_file%'
+        tag: title
+        action_id: contains_title
+      - type: gate
+        gates:
+          - left: '%actions.contains_title%'
+          - left: '%actions.contains_head%'
+        else:
+          type: respond
+          with: 03e-add-title.md
+      - type: respond
+        with: 04-merge-first-pr.md
+
   - title: Merge your first Pull Request
     description: Merge your Pull Request
     event: pull_request.closed
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/2
+    actions:
+      - type: gate
+        left: '%payload.pull_request.merged%'
+      - type: createIssue
+        title: Add a header
+        body: 05-h1-tag.md
+        action_id: new_issue
+      - type: respond
+        with: next.md
+        data:
+          issueURL: '%acions.new_issue.data.html_url%'
+
   - title: Change your username to an h1 tag
-    description: "Change your username to an h1 tag"
+    description: Change your username to an h1 tag
     event: pull_request
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/3
+    actions:
+      - type: gate
+        gates:
+          - left: '%payload.action%'
+            operator: ===
+            right: opened
+          - left: '%payload.action%'
+            operator: ===
+            right: synchronize
+      - type: getFileContents
+        filename: index.html
+        action_id: index_file
+      - type: htmlContainsTag
+        html: '%actions.index_file%'
+        tag: h1
+        action_id: contains_h1
+      - type: gate
+        left: '%actions.contains_h1%'
+        else:
+          type: respond
+          with: 05e-troubleshoot-h1.md
+      - type: respond
+        with: 06-add-image.md
+
   - title: Add an image
-    description: "Add an image"
+    description: Add an image
     event: pull_request.synchronize
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/3
+    actions:
+      - type: getFileContents
+        filename: index.html
+        action_id: index_file
+      - type: htmlContainsTag
+        html: '%actions.index_file%'
+        tag: img
+        action_id: contains_img
+      - type: gate
+        left: '%actions.contains_img%'
+        else:
+          type: respond
+          with: 06e-image.md
+      - type: respond
+        with: 07-merge-second-pr.md
+
   - title: Merge your second Pull Request
     description: Merge your Pull Request
     event: pull_request.closed
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/3
+    actions:
+      - type: gate
+        left: '%payload.pull_request.merged%'
+      - type: respond
+        with: 08-create-list.md
+
   - title: Create a list
     description: Create a list
     event: pull_request
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/4
+    actions:
+      - type: gate
+        gates:
+          - left: '%payload.action%'
+            operator: ===
+            right: opened
+          - left: '%payload.action%'
+            operator: ===
+            right: synchronize
+      - type: getFileContents
+        filename: index.html
+        action_id: index_file
+      - type: htmlContainsTag
+        html: '%actions.index_file%'
+        tag: ul
+        action_id: contains_ul
+      - type: htmlContainsTag
+        html: '%actions.index_file%'
+        tag: ol
+        action_id: contains_ol
+      - type: gate
+        gates:
+          - left: '%actions.contains_ul%'
+          - left: '%actions.contains_ol%'
+        else:
+          type: respond
+          with: 08e-list.md
+      - type: respond
+        with: 09-add-links.md
+
   - title: Add links
     description: Add links
     event: pull_request.synchronize
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/4
+    actions:
+      - type: getFileContents
+        filename: index.html
+        action_id: index_file
+      - type: htmlContainsTag
+        html: '%actions.index_file%'
+        tag: a
+        action_id: contains_a
+      - type: gate
+        left: '%actions.contains_a%'
+        else:
+          type: respond
+          with: 09e-links.md
+      - type: respond
+        with: 10-merge-third-pr.md
+
   - title: Merge your third Pull Request
     description: Merge your Pull Request
     event: pull_request.closed
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/4
-tags: [ "GitHub Pages" ]
+    actions:
+      - type: gate
+        left: '%payload.pull_request.merged%'
+      - type: mergeBranch
+        head: add-styles
+      - type: respond
+        with: 11-link-css.md
+tags: 
+  - GitHub Pages
 order: 6
