@@ -8,7 +8,7 @@ template:
 before:
   - type: createIssue
     title: Welcome
-    body: 01_welcome.md
+    body: 01-welcome.md
 
 steps:
   - title: Turn on GitHub Pages
