@@ -31,7 +31,7 @@ steps:
       - type: respond
         with: 02-html-structure.md
         data:
-          url: '%actions.prev.data.html_url%'
+          welcomeLink: '%actions.prev.data.html_url%'
 
   - title: Build the HTML document structure
     description: Follow the instructions to write the base structure of your HTML file
@@ -45,11 +45,14 @@ steps:
         html: '%actions.index_file%'
         tag: html
         action_id: contains_html
+        required: false
       - type: htmlContainsTag
         html: '%actions.index_file%'
         tag: body
         action_id: contains_body
+        required: false
       - type: gate
+        every: true
         gates:
           - left: '%actions.contains_html%'
           - left: '%actions.contains_body%'
@@ -72,11 +75,14 @@ steps:
         html: '%actions.index_file%'
         tag: head
         action_id: contains_head
+        required: false
       - type: htmlContainsTag
         html: '%actions.index_file%'
         tag: title
         action_id: contains_title
+        required: false
       - type: gate
+        every: true
         gates:
           - left: '%actions.contains_title%'
           - left: '%actions.contains_head%'
@@ -130,6 +136,7 @@ steps:
         html: '%actions.index_file%'
         tag: h1
         action_id: contains_h1
+        required: false
       - type: gate
         left: '%actions.contains_h1%'
         else:
@@ -150,6 +157,7 @@ steps:
         html: '%actions.index_file%'
         tag: img
         action_id: contains_img
+        required: false
       - type: gate
         left: '%actions.contains_img%'
         else:
@@ -194,10 +202,12 @@ steps:
         html: '%actions.index_file%'
         tag: ul
         action_id: contains_ul
+        required: false
       - type: htmlContainsTag
         html: '%actions.index_file%'
         tag: ol
         action_id: contains_ol
+        required: false
       - type: gate
         gates:
           - left: '%actions.contains_ul%'
