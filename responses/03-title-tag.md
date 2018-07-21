@@ -1,4 +1,4 @@
-# Give your page a title
+## Step 4: Add a page title
 
 Your web page is beginning to take shape! HTML and body tags are important, but their effect isn't too visible. Next, we'll make a visible change, by giving your page a title. Your page's title will show up on the title bar in your web browser, or as the title of any tabs you've got open. The title is used in all sorts of other places!
 
@@ -42,3 +42,6 @@ Finally, the `head` and `title` tags, will be children of the `html` tag, but si
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
 1. Ensure you've selected _Commit directly to the `add-index` branch_.
 1. Click on **Commit changes**.
+
+<hr>
+<h3 align="center">Watch below for my response</h3>
