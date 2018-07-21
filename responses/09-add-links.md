@@ -11,7 +11,7 @@ Great job with lists. Let's try adding some links, shall we?
 Hyperlinks allow people to navigate through pages on the web. Links are achieved with the anchor tag, `<a>`, and have two major components: the location they link to, and the content that should be linked. The location of the link is specified as a `href` attribute, and the content that should be linked can be specified between the opening and closing tags, like this:
 
 ```html
-<a href="github.com">This is a link to GitHub!</a>
+<a href="https://github.com">This is a link to GitHub!</a>
 ```
 
 ### :keyboard: Activity: Create links to your favorite sites

@@ -18,15 +18,20 @@ steps:
     actions:
       - type: respond
         with: 00-openapr.md
-        issue: Welcome
+        issue: 1
 
   - title: Open a pull request
     description: Open a pull request.
     event: pull_request.opened
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1
     actions:
+      - type: closeIssue
+        issue: Welcome
+        action_id: prev
       - type: respond
         with: 02-html-structure.md
+        data:
+          welcomeLink: '%actions.prev.data.html_url%'
 
   - title: Build the HTML document structure
     description: Follow the instructions to write the base structure of your HTML file
@@ -40,11 +45,14 @@ steps:
         html: '%actions.index_file%'
         tag: html
         action_id: contains_html
+        required: false
       - type: htmlContainsTag
         html: '%actions.index_file%'
         tag: body
         action_id: contains_body
+        required: false
       - type: gate
+        every: true
         gates:
           - left: '%actions.contains_html%'
           - left: '%actions.contains_body%'
@@ -67,11 +75,14 @@ steps:
         html: '%actions.index_file%'
         tag: head
         action_id: contains_head
+        required: false
       - type: htmlContainsTag
         html: '%actions.index_file%'
         tag: title
         action_id: contains_title
+        required: false
       - type: gate
+        every: true
         gates:
           - left: '%actions.contains_title%'
           - left: '%actions.contains_head%'
@@ -95,7 +106,7 @@ steps:
       - type: respond
         with: next.md
         data:
-          issueURL: '%acions.new_issue.data.html_url%'
+          issueURL: '%actions.new_issue.data.html_url%'
 
   - title: Change your username to an h1 tag
     description: Change your username to an h1 tag
@@ -110,6 +121,14 @@ steps:
           - left: '%payload.action%'
             operator: ===
             right: synchronize
+      - type: gate
+        left: '%payload.action%'
+        operator: '!=='
+        right: opened
+        required: false
+        else:
+          type: closeIssue
+          issue: Add a header
       - type: getFileContents
         filename: index.html
         action_id: index_file
@@ -117,6 +136,7 @@ steps:
         html: '%actions.index_file%'
         tag: h1
         action_id: contains_h1
+        required: false
       - type: gate
         left: '%actions.contains_h1%'
         else:
@@ -137,6 +157,7 @@ steps:
         html: '%actions.index_file%'
         tag: img
         action_id: contains_img
+        required: false
       - type: gate
         left: '%actions.contains_img%'
         else:
@@ -152,8 +173,14 @@ steps:
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
+      - type: createIssue
+        action_id: new_issue
+        title: Create a list
+        body: 08-create-list.md
       - type: respond
-        with: 08-create-list.md
+        with: next.md
+        data:
+          issueURL: '%actions.new_issue.data.html_url%'
 
   - title: Create a list
     description: Create a list
@@ -175,10 +202,12 @@ steps:
         html: '%actions.index_file%'
         tag: ul
         action_id: contains_ul
+        required: false
       - type: htmlContainsTag
         html: '%actions.index_file%'
         tag: ol
         action_id: contains_ol
+        required: false
       - type: gate
         gates:
           - left: '%actions.contains_ul%'
@@ -217,7 +246,7 @@ steps:
       - type: gate
         left: '%payload.pull_request.merged%'
       - type: mergeBranch
-        head: add-styles
+        head: add-style
       - type: respond
         with: 11-link-css.md
 tags: 
