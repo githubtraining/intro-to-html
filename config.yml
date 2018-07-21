@@ -25,8 +25,13 @@ steps:
     event: pull_request.opened
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1
     actions:
+      - type: closeIssue
+        issue: Welcome
+        action_id: prev
       - type: respond
         with: 02-html-structure.md
+        data:
+          url: '%actions.prev.data.html_url%'
 
   - title: Build the HTML document structure
     description: Follow the instructions to write the base structure of your HTML file
@@ -95,7 +100,7 @@ steps:
       - type: respond
         with: next.md
         data:
-          issueURL: '%acions.new_issue.data.html_url%'
+          issueURL: '%actions.new_issue.data.html_url%'
 
   - title: Change your username to an h1 tag
     description: Change your username to an h1 tag
@@ -110,6 +115,14 @@ steps:
           - left: '%payload.action%'
             operator: ===
             right: synchronize
+      - type: gate
+        left: '%payload.action%'
+        operator: '!=='
+        right: opened
+        required: false
+        else:
+          type: closeIssue
+          issue: Add a header
       - type: getFileContents
         filename: index.html
         action_id: index_file
@@ -152,8 +165,14 @@ steps:
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
+      - type: createIssue
+        action_id: new_issue
+        title: Create a list
+        body: 08-create-list.md
       - type: respond
-        with: 08-create-list.md
+        with: next.md
+        data:
+          issueURL: '%actions.new_issue.data.html_url%'
 
   - title: Create a list
     description: Create a list
