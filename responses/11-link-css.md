@@ -1,8 +1,12 @@
-Through the magic of stylesheets, I've added some :sparkles: to your web page. Take a look!
+You may be wondering why your page hasn't looked exactly the same as sample I showed in the beginning. That's because HTML gives your webpage structure, but the simple tags you have learned so far don't tell the web browser how you want each page element to appear. 
 
-https://{{user.username}}.github.io/{{repo}}/
+The appearance of each page element is defined through styles and is the subject of another course. For now, I have added a stylesheet for you. You can check it out here: https://github.com/{{ user.username }}/{{ repo }}/blob/master/style.css 
 
-You've learned the basics of HTML, and used it to build a start page. You can set is as your default start page:
+### Your finished page
+
+And here is the finished result: https://{{user.username}}.github.io/{{repo}}/
+
+You've learned the basics of HTML, and used it to build a simple webpage. If you'd like, you can make your fancy new page the default start page for your web browser. Just follow the links below for more information:
 
 - [Google Chrome](https://support.google.com/chrome/answer/95314?hl=en)
 - [Safari](https://support.apple.com/guide/safari/set-your-homepage-ibrw1020/mac)
