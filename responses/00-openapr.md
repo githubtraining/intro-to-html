@@ -1,7 +1,7 @@
 GitHub Pages is now serving your web page at:
 https://{{user.username}}.github.io/{{repo}}/
 
-It's not very special looking, isn't it? Web hosts (and GitHub Pages) look for a file titled `index.html` and serve that up. Since there's no `index.html` file in our repository, GitHub Pages displays the contents of the README by default. Let's change this by adding the `index.html` file to our repository. Don't worry, we've taken care of the hard part.
+It's not very special looking yet, is it? Web hosts (and GitHub Pages) look for a file titled `index.html` and serve that up. Since there's no `index.html` file in our repository, GitHub Pages displays the contents of the README by default. Let's change this by adding the `index.html` file to our repository. Don't worry, we've taken care of the hard part.
 
 ### :keyboard: Activity: Add `index.html`
 
