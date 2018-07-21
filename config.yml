@@ -246,7 +246,7 @@ steps:
       - type: gate
         left: '%payload.pull_request.merged%'
       - type: mergeBranch
-        head: add-styles
+        head: add-style
       - type: respond
         with: 11-link-css.md
 tags: 
