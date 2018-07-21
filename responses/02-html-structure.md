@@ -1,8 +1,8 @@
-# Add initial HTML structure
+## Step 3: Add HTML document structure
 
 Great job opening a pull request @{{ user.username }}! I've gone ahead and closed your [previous issue]({{ welcomeLink }}). 
 
-This PR contains some content, but it doesn't have any of the HTML structure that tells a browser how to structure the content. All pages created with HTML must contain tags that identify it as such. The tags look like this:
+This pull request contains some content, but it doesn't have any of the HTML structure that tells a browser how to structure the content. All pages created with HTML must contain tags that identify it as such. The tags look like this:
 
 ```html
 <html>
@@ -30,3 +30,6 @@ In HTML, spacing doesn't really matter. We've added some tabs to make the code e
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
 1. Ensure you've selected _Commit directly to the `add-index` branch_.
 1. Click on **Commit changes**.
+
+<hr>
+<h3 align="center">Watch below for my response</h3>
