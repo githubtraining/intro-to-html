@@ -9,6 +9,7 @@ before:
   - type: createIssue
     title: Welcome
     body: 01-welcome.md
+  - type: updateBranchProtection
 
 steps:
   - title: Turn on GitHub Pages
@@ -57,10 +58,12 @@ steps:
           - left: '%actions.contains_html%'
           - left: '%actions.contains_body%'
         else:
-          type: respond
-          with: 03e-add-html.md
-      - type: respond
-        with: 03-title-tag.md
+          type: createReview
+          body: 03e-add-html.md
+          event: REQUEST_CHANGES
+      - type: createReview
+        event: COMMENT
+        body: 03-title-tag.md
         
 
   - title: Add a title tag
@@ -87,10 +90,12 @@ steps:
           - left: '%actions.contains_title%'
           - left: '%actions.contains_head%'
         else:
-          type: respond
-          with: 03e-add-title.md
-      - type: respond
-        with: 04-merge-first-pr.md
+          type: createReview
+          event: REQUEST_CHANGES
+          body: 03e-add-title.md
+      - type: createReview
+        event: APPROVE
+        body: 04-merge-first-pr.md
 
   - title: Merge your first Pull Request
     description: Merge your Pull Request
@@ -140,10 +145,12 @@ steps:
       - type: gate
         left: '%actions.contains_h1%'
         else:
-          type: respond
-          with: 05e-troubleshoot-h1.md
-      - type: respond
-        with: 06-add-image.md
+          type: createReview
+          event: REQUEST_CHANGES
+          body: 05e-troubleshoot-h1.md
+      - type: createReview
+        event: COMMENT
+        body: 06-add-image.md
 
   - title: Add an image
     description: Add an image
@@ -161,10 +168,12 @@ steps:
       - type: gate
         left: '%actions.contains_img%'
         else:
-          type: respond
-          with: 06e-image.md
-      - type: respond
-        with: 07-merge-second-pr.md
+          type: createReview
+          body: 06e-image.md
+          event: REQUEST_CHANGES
+      - type: createReview
+        body: 07-merge-second-pr.md
+        event: APPROVE
 
   - title: Merge your second Pull Request
     description: Merge your Pull Request
@@ -213,10 +222,12 @@ steps:
           - left: '%actions.contains_ul%'
           - left: '%actions.contains_ol%'
         else:
-          type: respond
-          with: 08e-list.md
-      - type: respond
-        with: 09-add-links.md
+          type: createReview
+          body: 08e-list.md
+          event: REQUEST_CHANGES
+      - type: createReview
+        body: 09-add-links.md
+        event: COMMENT
 
   - title: Add links
     description: Add links
@@ -233,10 +244,12 @@ steps:
       - type: gate
         left: '%actions.contains_a%'
         else:
-          type: respond
-          with: 09e-links.md
-      - type: respond
-        with: 10-merge-third-pr.md
+          type: createReview
+          body: 09e-links.md
+          event: REQUEST_CHANGES
+      - type: createReview
+        body: 10-merge-third-pr.md
+        event: APPROVE
 
   - title: Merge your third Pull Request
     description: Merge your Pull Request
