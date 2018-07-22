@@ -12,7 +12,7 @@ HTML stands for **H**yper **T**ext **M**arkup **L**anguage. HTML is not a progra
 
 When someone enters your web address, the web standards will automatically look for a file called index.html and display it in your browser. Most people call this your home page.
 
-## Hosting a webpage
+## Step 1: Hosting your webpage
 
 It isn't enough to simply create a webpage on GitHub. You must deploy your webpage to a web host that is connected to the internet. For this course we will use GitHub Pages, but you could deploy a web page to a simple host, or as your web pages become more dynamic, you can use services like Heroku.
 
