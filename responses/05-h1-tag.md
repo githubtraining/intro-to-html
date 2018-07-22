@@ -1,7 +1,6 @@
-Take a peek at your shiny new web page! It can be found at:
-https://{{user.username}}.github.io/{{repo}}/
+## Step 6: Add a header
 
-# Add a header
+Take a peek at your shiny new web page! It can be found at: https://{{user.username}}.github.io/{{repo}}/
 
 Headers create prominent text in the body of your web page. Headers come in different levels. For example, a header 1, or h1, is the largest, while a header 3, or h3, is smaller, and a header 6, or h6, smaller still. You can create headers in html using the h1, h2, h3, h4, h5, and h6 tags. Here's an example:
 
@@ -20,3 +19,6 @@ Headers create prominent text in the body of your web page. Headers come in diff
 1. Click on **Propose file change**.
 1. Give your pull request a title, and a comment.
 1. Click on **Create pull request.**
+
+<hr>
+<h3 align="center">Look for my next response in your pull request</h3>
