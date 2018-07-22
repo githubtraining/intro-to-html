@@ -21,8 +21,6 @@ Hyperlinks allow people to navigate through pages on the web. Links are achieved
 1. Link each of your favorite sites to their respective URLs. You can do this by adding an opening anchor tag `<a>` tag with `href` attribute with your favorite site's URL, the name of the site inside the anchor tag, and a closing anchor `</a>` tag. 
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
 1. Click on **Commit changes**.
-1. Give your pull request a title, and a comment.
-1. Click on **Create pull request.**
 
 <hr>
 <h3 align="center">Look for my next response in your pull request</h3>
