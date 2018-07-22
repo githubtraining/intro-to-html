@@ -216,6 +216,7 @@ steps:
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
+      - type: removeBranchProtection
       - type: mergeBranch
         head: add-styles
       - type: respond
