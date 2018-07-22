@@ -37,7 +37,7 @@ steps:
   - title: Build the HTML document structure
     description: Follow the instructions to write the base structure of your HTML file
     event: pull_request.synchronize
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/2
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: getFileContents
         filename: index.html
@@ -69,7 +69,7 @@ steps:
   - title: Add a title tag
     description: Add a title tag
     event: pull_request.synchronize
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/2
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: getFileContents
         filename: index.html
@@ -100,7 +100,7 @@ steps:
   - title: Merge your first Pull Request
     description: Merge your Pull Request
     event: pull_request.closed
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/2
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
@@ -116,7 +116,7 @@ steps:
   - title: Change your username to an h1 tag
     description: Change your username to an h1 tag
     event: pull_request
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/3
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: gate
         gates:
@@ -155,7 +155,7 @@ steps:
   - title: Add an image
     description: Add an image
     event: pull_request.synchronize
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/3
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: getFileContents
         filename: index.html
@@ -178,7 +178,7 @@ steps:
   - title: Merge your second Pull Request
     description: Merge your Pull Request
     event: pull_request.closed
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/3
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
@@ -194,7 +194,7 @@ steps:
   - title: Create a list
     description: Create a list
     event: pull_request
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/4
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: gate
         gates:
@@ -204,6 +204,13 @@ steps:
           - left: '%payload.action%'
             operator: ===
             right: synchronize
+      - type: gate
+        left: '%payload.action%'
+        operator: '!=='
+        right: opened
+        else:
+          type: closeIssue
+          issue: Create a list
       - type: getFileContents
         filename: index.html
         action_id: index_file
@@ -232,7 +239,7 @@ steps:
   - title: Add links
     description: Add links
     event: pull_request.synchronize
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/4
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: getFileContents
         filename: index.html
@@ -254,7 +261,7 @@ steps:
   - title: Merge your third Pull Request
     description: Merge your Pull Request
     event: pull_request.closed
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pull/4
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
