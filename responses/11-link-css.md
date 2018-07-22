@@ -4,13 +4,13 @@ The appearance of each page element is defined through styles and is the subject
 
 For your webpage to use your new stylesheet, you just need to link it within the `<head>` of your `index.html` file. If you include the following link in your `index.html` file, your webpage will begin using the css file to make your website look awesome!
 
-```
+```html
   <link rel="stylesheet" href="styles.css">
 ```
 
 As an example, your `index.html` file might look like this:
 
-```
+```html
     <head>
         <title>I am a title!</title>
         <link rel="stylesheet" href="styles.css">
