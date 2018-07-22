@@ -165,6 +165,8 @@ steps:
         tag: img
         attribute: src
         action_id: contains_img
+      - type: gate
+        left: '%actions.contains_img%'
         else:
           type: createReview
           body: 06e-image.md
