@@ -2,7 +2,7 @@ You may be wondering why your page hasn't looked exactly the same as the sample 
 
 The appearance of each page element is defined through styles and is the subject of another course. For now, I have added a stylesheet for you. You can check it out here: https://github.com/{{ user.username }}/{{ repo }}/blob/master/style.css 
 
-For your website to use your new stylesheet, you just need to link it within the `<head>` of your `index.html` file. If you include the following link in your `index.html` file, your webpage will begin using the css file to make your website look awesome!
+For your webpage to use your new stylesheet, you just need to link it within the `<head>` of your `index.html` file. If you include the following link in your `index.html` file, your webpage will begin using the css file to make your website look awesome!
 
 ```
   <link rel="stylesheet" href="styles.css">
