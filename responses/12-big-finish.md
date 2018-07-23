@@ -4,7 +4,7 @@ Well done @{{ user.username }}, here is the finished result: https://{{user.user
 
 You've learned the basics of HTML, and used it to build a simple webpage. 
 
-Though this works, there's still more you can do to make sure you're up to date with standard conventions, like using an HTML validator!
+Though this works, there's still more you can do to make sure you're up to date with standard conventions, like using an HTML validator.
 
 Here's an example, using your current website: https://validator.w3.org/nu/?showsource=yes&doc=https://{{user.username}}.github.io/{{repo}}/
 
