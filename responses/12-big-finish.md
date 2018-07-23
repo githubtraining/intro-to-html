@@ -1,4 +1,4 @@
-### Your finished page
+### Show the world your finished page
 
 Well done @{{ user.username }}, here is the finished result: https://{{user.username}}.github.io/{{repo}}/
 
