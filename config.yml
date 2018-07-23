@@ -262,11 +262,44 @@ steps:
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
-      - type: removeBranchProtection
-      - type: mergeBranch
+      - type: createPullRequest
+        title: Add some style to your page
         head: add-style
+        body: 11-link-css.md
+        action_id: new_pr
       - type: respond
-        with: 11-link-css.md
+        with: next.md
+        data:
+          issueURL: '%actions.new_pr.data.html_url%'
+
+  - title: Make it beautiful
+    description: Add some styles to your new site
+    event: pull_request.synchronize
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    actions:
+      - type: getFileContents
+        filename: index.html
+        action_id: index
+      - type: gate
+        left: '/<link rel="stylesheet" href="styles.css">/'
+        operator: test
+        right: '%actions.index%'
+        else:
+          type: respond
+          with: 11-style-fail.md
+      - type: respond
+        with: 11-style-success.md
+
+  - title: Merge the final Pull Request
+    description: Get ready to show off your new skills
+    event: pull_request.closed
+    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    actions:
+      - type: gate
+        left: '%payload.pull_request.merged%'
+      - type: respond
+        with: 12-big-finish.md
+
 tags: 
   - GitHub Pages
 order: 6
