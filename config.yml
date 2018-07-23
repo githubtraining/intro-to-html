@@ -26,6 +26,10 @@ steps:
     event: pull_request.opened
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1
     actions:
+      - type: gate
+        left: '%payload.pull_request.head.ref%'
+        operator: ===
+        right: add-index
       - type: closeIssue
         issue: Welcome
         action_id: prev
