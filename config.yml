@@ -64,7 +64,6 @@ steps:
       - type: createReview
         event: COMMENT
         body: 03-title-tag.md
-        
 
   - title: Add a title tag
     description: Add a title tag
@@ -218,12 +217,10 @@ steps:
         html: '%actions.index_file%'
         tag: ul
         action_id: contains_ul
-        required: false
       - type: htmlContainsTag
         html: '%actions.index_file%'
         tag: ol
         action_id: contains_ol
-        required: false
       - type: gate
         gates:
           - left: '%actions.contains_ul%'
