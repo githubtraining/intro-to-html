@@ -211,6 +211,7 @@ steps:
         left: '%payload.action%'
         operator: '!=='
         right: opened
+        required: false
         else:
           type: closeIssue
           issue: Create a list
