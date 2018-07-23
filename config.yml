@@ -262,6 +262,9 @@ steps:
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
+      - type: mergeBranch
+        head: master
+        base: add-style
       - type: createPullRequest
         title: Add some style to your page
         head: add-style
