@@ -17,13 +17,12 @@ As an example, your `index.html` file might look like this:
     </head>
 ```
 
-### Your finished page
+### :keyboard: Activity: Create a style to your site
 
-And here is the finished result: https://{{user.username}}.github.io/{{repo}}/
+1. Edit the `index.html` file in the `add-style` branch by [using this direct link](https://github.com/{{ user.username }}/{{ repo }}/edit/add-style/index.html) or going to the **Code** tab, selecting the `add-style` branch, clicking on the `index.html` file, and clicking the pencil :pencil: to edit.
+1. Inside the <head> tag, add the following `<link rel="stylesheet" href="styles.css">`.
+1. In the _Commit changes_ section, enter a commit message that describes what you've done.
+1. Click on **Commit changes**.
 
-You've learned the basics of HTML, and used it to build a simple webpage. If you'd like, you can make your fancy new page the default start page for your web browser. Just follow the links below for more information:
-
-- [Google Chrome](https://support.google.com/chrome/answer/95314?hl=en)
-- [Safari](https://support.apple.com/guide/safari/set-your-homepage-ibrw1020/mac)
-- [Firefox](https://support.mozilla.org/en-US/kb/how-to-set-the-home-page)
-- [Microsoft Edge](https://support.microsoft.com/en-us/help/4027577/windows-change-your-home-page)
+<hr>
+<h3 align="center">Return to this pull request for next steps</h3>
