@@ -12,7 +12,7 @@ Headers create prominent text in the body of your web page. Headers come in diff
 
 
 1. Edit the `index.html` file in your master branch by [using this direct link](https://github.com/{{ user.username }}/{{ repo }}/edit/master/index.html) or going to the **Code** tab, clicking on the `index.html` file, clicking the pencil :pencil: to edit the HTML.
-1. Inside the body tag, add an opening `<h1>` tag, some content for the header, and a closing `</h1>` tag. 
+1. Between the body tags, add an opening `<h1>` tag, some content for the header, and a closing `</h1>` tag. 
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
 1. Ensure you've selected _Create a new branch for this commit and start a pull request_.
 1. Give your branch a descriptive name, like `add-headers-and-images`.

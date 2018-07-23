@@ -100,8 +100,8 @@ steps:
         event: APPROVE
         body: 04-merge-first-pr.md
 
-  - title: Merge your first Pull Request
-    description: Merge your Pull Request
+  - title: Merge your first pull request
+    description: Merge your pull request
     event: pull_request.closed
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
@@ -178,8 +178,8 @@ steps:
         body: 07-merge-second-pr.md
         event: APPROVE
 
-  - title: Merge your second Pull Request
-    description: Merge your Pull Request
+  - title: Merge your second pull request
+    description: Merge your pull request
     event: pull_request.closed
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
@@ -260,8 +260,8 @@ steps:
         body: 10-merge-third-pr.md
         event: APPROVE
 
-  - title: Merge your third Pull Request
-    description: Merge your Pull Request
+  - title: Merge your third pull request
+    description: Merge your pull request
     event: pull_request.closed
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
     actions:
@@ -299,7 +299,7 @@ steps:
       - type: respond
         with: 11-style-success.md
 
-  - title: Merge the final Pull Request
+  - title: Merge the final pull request
     description: Get ready to show off your new skills
     event: pull_request.closed
     link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls

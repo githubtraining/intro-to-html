@@ -14,7 +14,7 @@ You'll also notice that the image tag doesn't need to close since it is consider
 
 1. Click on **Files Changed**.
 1. Click on the :pencil: to edit the file.
-1. Place an opening `<img>` tag inside the body tag.
+1. Place an opening `<img>` tag between the body tags. Reminder: you don't need to close an `<img>` tag!
 1. Set the `src` attribute to the image you would like to display. You can use your GitHub profile picture: `{{ user.avatarUrl }}`
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
 1. Click on **Commit changes**.
