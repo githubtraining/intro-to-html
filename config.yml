@@ -30,6 +30,10 @@ steps:
         left: '%payload.pull_request.head.ref%'
         operator: ===
         right: add-index
+      - type: gate
+        left: '%payload.pull_request.base.ref%'
+        operator: ===
+        right: master
       - type: closeIssue
         issue: Welcome
         action_id: prev
@@ -130,6 +134,10 @@ steps:
             operator: ===
             right: synchronize
       - type: gate
+        left: '%payload.pull_request.base.ref%'
+        operator: ===
+        right: master
+      - type: gate
         left: '%payload.action%'
         operator: '!=='
         right: opened
@@ -207,6 +215,10 @@ steps:
           - left: '%payload.action%'
             operator: ===
             right: synchronize
+      - type: gate
+        left: '%payload.pull_request.base.ref%'
+        operator: ===
+        right: master
       - type: gate
         left: '%payload.action%'
         operator: '!=='
