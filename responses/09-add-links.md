@@ -18,7 +18,12 @@ Hyperlinks allow people to navigate through pages on the web. Links are achieved
 
 1. Click on **Files Changed**.
 1. Click on the :pencil: pencil icon to edit the file.
-1. Link each of your favorite sites to their respective URLs. You can do this by adding an opening anchor tag `<a>` tag with `href` attribute with your favorite site's URL, the name of the site inside the anchor tag, and a closing anchor `</a>` tag. 
+1. In the list you just created, add a link to each of your favorite sites to their respective URLs. You can do this by adding an opening anchor tag `<a>` tag with `href` attribute with your favorite site's URL, the name of the site inside the anchor tag, and a closing anchor `</a>` tag. Here is an example of a list item with a link:
+
+      ```html
+      <li><a href="https://github.com">This is a link to GitHub!</a></li>
+      ```
+
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
 1. Click on **Commit changes**.
 
