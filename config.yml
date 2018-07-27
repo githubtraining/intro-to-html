@@ -195,7 +195,7 @@ steps:
         left: '%payload.pull_request.merged%'
       - type: createIssue
         action_id: new_issue
-        title: Create a list
+        title: Create some lists
         body: 08-create-list.md
       - type: respond
         with: next.md
@@ -226,7 +226,7 @@ steps:
         required: false
         else:
           type: closeIssue
-          issue: Create a list
+          issue: Create some lists
       - type: getFileContents
         filename: index.html
         action_id: index_file
