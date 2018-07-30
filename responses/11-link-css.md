@@ -7,7 +7,7 @@ The appearance of each page element is defined through styles and is the subject
 For your webpage to use your new stylesheet, you just need to link it within the `<head>` of your `index.html` file. If you include the following link in your `index.html` file, your webpage will begin using the css file to make your website look awesome!
 
 ```html
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="style.css">
 ```
 
 As an example, your `index.html` file might look like this:
@@ -15,14 +15,14 @@ As an example, your `index.html` file might look like this:
 ```html
     <head>
         <title>I am a title!</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="style.css">
     </head>
 ```
 
 ### :keyboard: Activity: Create a style to your site
 
 1. Edit the `index.html` file in the `add-style` branch by [using this direct link](https://github.com/{{ user.username }}/{{ repo }}/edit/add-style/index.html) or going to the **Code** tab, selecting the `add-style` branch, clicking on the `index.html` file, and clicking the pencil :pencil: to edit.
-1. Between the `<head>` tags, add the following `<link rel="stylesheet" href="styles.css">`.
+1. Between the `<head>` tags, add the following `<link rel="stylesheet" href="style.css">`.
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
 1. Click on **Commit changes**.
 
