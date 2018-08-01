@@ -301,7 +301,7 @@ steps:
         filename: index.html
         action_id: index
       - type: gate
-        left: '/<link rel="stylesheet" href="styles.css">/'
+        left: '/<link rel="stylesheet" href="style.css">/'
         operator: test
         right: '%actions.index%'
         else:
