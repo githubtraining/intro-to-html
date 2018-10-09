@@ -3,7 +3,7 @@ tagline: Take your first steps in the world of programming
 description: If you are looking for a quick and fun introduction to the exciting world of programming, this course is for you. Learn fundamental HTML skills and build your first webpage in less than an hour.
 template:
   name: intro-html
-  url: https://github.com/githubtraining/intro-to-html-template.git
+  repo: intro-to-html-template
   description: 'A robot powered training repository :robot:'
 before:
   - type: createIssue
