@@ -15,7 +15,7 @@ steps:
   - title: Turn on GitHub Pages
     description: Turn on GitHub Pages in the settings page of the repository.
     event: deployment
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1
+    link: '{{ repoUrl }}/issues/1'
     actions:
       - type: respond
         with: 00-openapr.md
@@ -24,7 +24,7 @@ steps:
   - title: Open a pull request
     description: Open a pull request.
     event: pull_request.opened
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/issues/1
+    link: '{{ repoUrl }}/issues/1'
     actions:
       - type: gate
         left: '%payload.pull_request.head.ref%'
@@ -45,7 +45,7 @@ steps:
   - title: Build the HTML document structure
     description: Follow the instructions to write the base structure of your HTML file
     event: pull_request.synchronize
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: getFileContents
         filename: index.html
@@ -76,7 +76,7 @@ steps:
   - title: Add a title tag
     description: Add a title tag
     event: pull_request.synchronize
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: getFileContents
         filename: index.html
@@ -107,7 +107,7 @@ steps:
   - title: Merge your first pull request
     description: Merge your pull request
     event: pull_request.closed
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
@@ -123,7 +123,7 @@ steps:
   - title: Change your username to an h1 tag
     description: Change your username to an h1 tag
     event: pull_request
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: gate
         gates:
@@ -166,7 +166,7 @@ steps:
   - title: Add an image
     description: Add an image
     event: pull_request.synchronize
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: getFileContents
         filename: index.html
@@ -189,7 +189,7 @@ steps:
   - title: Merge your second pull request
     description: Merge your pull request
     event: pull_request.closed
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
@@ -205,7 +205,7 @@ steps:
   - title: Create a list
     description: Create a list
     event: pull_request
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: gate
         gates:
@@ -253,7 +253,7 @@ steps:
   - title: Add links
     description: Add links
     event: pull_request.synchronize
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: getFileContents
         filename: index.html
@@ -275,7 +275,7 @@ steps:
   - title: Merge your third pull request
     description: Merge your pull request
     event: pull_request.closed
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
@@ -295,7 +295,7 @@ steps:
   - title: Make it beautiful
     description: Add some styles to your new site
     event: pull_request.synchronize
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: getFileContents
         filename: index.html
@@ -314,7 +314,7 @@ steps:
   - title: Merge the final pull request
     description: Get ready to show off your new skills
     event: pull_request.closed
-    link: https://github.com/{{ user.username }}/{{ course.template.name }}/pulls
+    link: '{{ repoUrl }}/pulls'
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
