@@ -234,10 +234,12 @@ steps:
         html: '%actions.index_file%'
         tag: ul
         action_id: contains_ul
+        required: false
       - type: htmlContainsTag
         html: '%actions.index_file%'
         tag: ol
         action_id: contains_ol
+        required: false
       - type: gate
         gates:
           - left: '%actions.contains_ul%'
@@ -262,6 +264,7 @@ steps:
         html: '%actions.index_file%'
         tag: a
         action_id: contains_a
+        required: false
       - type: gate
         left: '%actions.contains_a%'
         else:
