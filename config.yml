@@ -30,6 +30,9 @@ steps:
         left: '%payload.pull_request.head.ref%'
         operator: ===
         right: add-index
+        else:
+        - type: respond
+          with: base-branch.md
       - type: gate
         left: '%payload.pull_request.base.ref%'
         operator: ===
