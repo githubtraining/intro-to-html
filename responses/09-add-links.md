@@ -11,7 +11,7 @@ Great job with lists. Let's try adding some links, shall we?
 Hyperlinks allow people to navigate through pages on the web. Links are achieved with the anchor tag, `<a>`, and have two major components: the location they link to, and the content that should be linked. The location of the link is specified as a `href` attribute, and the content that should be linked can be specified between the opening and closing tags, like this:
 
 ```html
-<a href="https://github.com">This is a link to GitHub!</a>
+# TODO POINT TO RELEVANT SERVER <a href="https://github.com">This is a link to GitHub!</a>
 ```
 
 ### :keyboard: Activity: Create links to your favorite sites
@@ -21,7 +21,7 @@ Hyperlinks allow people to navigate through pages on the web. Links are achieved
 1. In the list you just created, add a link to each of your favorite sites to their respective URLs. You can do this by adding an opening anchor tag `<a>` tag with `href` attribute with your favorite site's URL, the name of the site inside the anchor tag, and a closing anchor `</a>` tag. Here is an example of a list item with a link:
 
       ```html
-      <li><a href="https://github.com">This is a link to GitHub!</a></li>
+      # TODO POINT TO RELEVANT SERVER <li><a href="https://github.com">This is a link to GitHub!</a></li>
       ```
 
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
