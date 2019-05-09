@@ -7,10 +7,10 @@ template:
   description: 'A robot powered training repository :robot:'
 before:
   - type: octokit
-          method: repos.getPages
-          owner: '%payload.repository.owner.login%'
-          repo: '%payload.repository.name%'
-          action_id: pagesUrl
+    method: repos.getPages
+    owner: '%payload.repository.owner.login%'
+    repo: '%payload.repository.name%'
+    action_id: pagesUrl
   - type: createIssue
     title: Welcome
     body: 01-welcome.md
