@@ -1,6 +1,6 @@
 ## Step 9: Create a list
 
-Your site with your new photo can be seen at: <# TODO FIX URL https://{{user.username}}.github.io/{{repo}}/>
+Your site with your new photo can be seen at: {{ pagesUrl }}
 
 > Note: Sometimes it takes a few minutes for a GitHub Pages site to reload. If your changes still don't appear after a few minutes, you might try clearing the cache in your browser and refreshing the page. 
 
@@ -9,8 +9,8 @@ Your site with your new photo can be seen at: <# TODO FIX URL https://{{user.use
 Lists are used all over the internet. They come in two flavors: ordered and unordered.
 
 1. This
-1. Is an
-1. Ordered list
+2. Is an
+3. Ordered list
 
 And...
 

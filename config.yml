@@ -6,9 +6,16 @@ template:
   repo: intro-to-html-template
   description: 'A robot powered training repository :robot:'
 before:
+  - type: octokit
+          method: repos.getPages
+          owner: '%payload.repository.owner.login%'
+          repo: '%payload.repository.name%'
+          action_id: pagesUrl
   - type: createIssue
     title: Welcome
     body: 01-welcome.md
+    data:
+      pagesUrl: '%actions.pagesUrl.data.html_url%'
   - type: updateBranchProtection
 
 steps:
@@ -111,9 +118,16 @@ steps:
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
+      - type: octokit
+        method: repos.getPages
+        owner: '%payload.repository.owner.login%'
+        repo: '%payload.repository.name%'
+        action_id: pagesUrl
       - type: createIssue
         title: Add a header
         body: 05-h1-tag.md
+        data:
+          pagesUrl: '%actions.pagesUrl.data.html_url%'
         action_id: new_issue
       - type: respond
         with: next.md
@@ -193,10 +207,17 @@ steps:
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
+      - type: octokit
+        method: repos.getPages
+        owner: '%payload.repository.owner.login%'
+        repo: '%payload.repository.name%'
+        action_id: pagesUrl
       - type: createIssue
         action_id: new_issue
         title: Create a list
         body: 08-create-list.md
+        data:
+          pagesUrl: '%actions.pagesUrl.data.html_url%'
       - type: respond
         with: next.md
         data:
@@ -321,8 +342,15 @@ steps:
     actions:
       - type: gate
         left: '%payload.pull_request.merged%'
+      - type: octokit
+        method: repos.getPages
+        owner: '%payload.repository.owner.login%'
+        repo: '%payload.repository.name%'
+        action_id: pagesUrl
       - type: respond
         with: 12-big-finish.md
+        data:
+          pagesUrl: '%actions.pagesUrl.data.html_url%'
 
 tags: 
   - GitHub Pages
