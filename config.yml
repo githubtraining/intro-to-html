@@ -6,16 +6,9 @@ template:
   repo: intro-to-html-template
   description: 'A robot powered training repository :robot:'
 before:
-  - type: octokit
-    method: repos.getPages
-    owner: '%payload.repository.owner.login%'
-    repo: '%payload.repository.name%'
-    action_id: pagesUrl
   - type: createIssue
     title: Welcome
     body: 01-welcome.md
-    data:
-      pagesUrl: '%actions.pagesUrl.data.html_url%'
   - type: updateBranchProtection
 
 steps:
@@ -24,8 +17,15 @@ steps:
     event: deployment
     link: '{{ repoUrl }}/issues/1'
     actions:
+      - type: octokit
+        method: repos.getPages
+        owner: '%payload.repository.owner.login%'
+        repo: '%payload.repository.name%'
+        action_id: pagesUrl
       - type: respond
         with: 00-openapr.md
+        data:
+          pagesUrl: '%actions.pagesUrl.data.html_url%'
         issue: 1
 
   - title: Open a pull request
