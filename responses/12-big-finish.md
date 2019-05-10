@@ -6,7 +6,12 @@ You've learned the basics of HTML, and used it to build a simple webpage.
 
 Though this works, there's still more you can do to make sure you're up to date with standard conventions, like using an HTML validator.
 
-<h3 align="center"><a href="https://validator.w3.org/nu/?showsource=yes&doc=https://{{user.username}}.github.io/{{repo}}/">See validation</a></h3> <# TODO FIX URL>
+{% if GHE_HOST %}
+<h3 align="center"><a href="https://validator.w3.org/nu/?showsource=yes&doc=https://pages.{{ GHE_HOST }}/{{ user.login }}/{{ repo }}/">See validation</a></h3>
+{% else %}
+<h3 align="center"><a href="https://validator.w3.org/nu/?showsource=yes&doc=https://{{ user.login }}.github.io/{{ repo }}">See validation</a></h3>
+{% endif %}
+
 
 If you'd like, you can make your fancy new page the default start page for your web browser. Just follow the links below for more information:
 
