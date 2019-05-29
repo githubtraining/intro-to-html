@@ -14,13 +14,13 @@ When someone enters your web address, the web standards will automatically look 
 
 ## Step 1: Hosting your webpage
 
-It isn't enough to simply create a webpage on GitHub. You must deploy your webpage to a web host that is connected to the internet. For this course we will use GitHub Pages, but you could deploy a web page to a simple host, or as your web pages become more dynamic, you can use services like Heroku.
+It isn't enough to simply create a webpage on GitHub. You must deploy your webpage to a web host that is connected to the internet. For this course we will use GitHub Pages, but you could publish the HTML to any static host.
 
 ## :keyboard: Activity: Turn on GitHub Pages
 
 1. Under your repository name, click [**Settings**]({{ repoUrl }}/settings).
 1. In the **GitHub Pages** section, use the **Select source** drop-down menu to select `master` as your GitHub Pages publishing source.
-1. Click **Save**.
+1. Return to this issue.
 
 > _I may take up to a minute to respond as I wait for GitHub Pages to create a deployment of your repository_.
 
