@@ -27,4 +27,4 @@ It isn't enough to simply create a webpage on GitHub. You must deploy your webpa
 > _For more information, see [Configuring a publishing source for GitHub Pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/) in the GitHub Help._
 
 <hr>
-<h3 align="center">Return to this issue for next steps</h3>
+<h3 align="center">I'll respond in this issue after you've enabled GitHub Pages.</h3>
