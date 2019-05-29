@@ -22,7 +22,7 @@ It isn't enough to simply create a webpage on GitHub. You must deploy your webpa
 1. In the **GitHub Pages** section, use the **Select source** drop-down menu to select `master` as your GitHub Pages publishing source.
 1. Return to this issue.
 
-> _I may take up to a minute to respond as I wait for GitHub Pages to create a deployment of your repository_.
+> _I may take up to a minute to respond as I wait for GitHub Pages to create a deployment of your repository. If you don't see anything after a minute, refresh this page_.
 
 > _For more information, see [Configuring a publishing source for GitHub Pages](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/) in the GitHub Help._
 
