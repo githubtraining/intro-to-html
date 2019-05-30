@@ -79,9 +79,10 @@ steps:
           type: createReview
           body: 03e-add-html.md
           event: REQUEST_CHANGES
-      - type: createReview
-        event: COMMENT
+      - type: createPullRequestComment
         body: 03-title-tag.md
+        file: index.html
+        position: 3
 
   - title: Add a title tag
     description: Add a title tag

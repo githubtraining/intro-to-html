@@ -34,6 +34,15 @@ Finally, the `head` and `title` tags, will be children of the `html` tag, but si
 
 ### :keyboard: Activity: Give your page a title
 
+Apply this suggested change, or follow the instructions below if you'd like to type out the code manually.
+
+```suggestion
+    <head>
+        <title>My awesome web page</title>
+    </head>
+
+```
+
 1. Click on **Files Changed**.
 1. Click on the :pencil: to edit the file.
 1. Place an opening `<head>` tag and an opening `<title>` tag after the first opening `html` tag, but before the `body` tag.
