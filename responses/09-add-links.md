@@ -24,7 +24,7 @@ Hyperlinks allow people to navigate through pages on the web. Links are achieved
 ### :keyboard: Activity: Create links to your favorite sites
 
 1. Click on **Files Changed**.
-1. Click on the :pencil: pencil icon to edit the file.
+1. Click on the ellipsis (...) and select **Edit file**.
 1. In the list you just created, add a link to each of your favorite sites to their respective URLs. You can do this by adding an opening anchor tag `<a>` tag with `href` attribute with your favorite site's URL, the name of the site inside the anchor tag, and a closing anchor `</a>` tag. Here is an example of a list item with a link:
 
 {% if GHE_HOST %}

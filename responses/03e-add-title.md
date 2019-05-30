@@ -10,7 +10,7 @@ Let's try again!
 ### :keyboard: Activity: Give your page a title
 
 1. Click on **Files Changed**.
-1. Click on the :pencil: to edit the file.
+1. Click on the ellipsis (...) and select **Edit file**.
 1. Place an opening `<head>` tag and an opening `<title>` tag after the first opening HTML tag, but before the body tag.
 1. Write out a title after the opening title tag.
 1. Place a closing `</title>` tag and a closing `</head>` tag after your new title, but before the body tag. 

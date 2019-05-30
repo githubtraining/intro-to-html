@@ -9,7 +9,7 @@ Let's try again!
 ### :keyboard: Activity: Add an image to your web page
 
 1. Click on **Files Changed**.
-1. Click on the :pencil: to edit the file.
+1. Click on the ellipsis (...) and select **Edit file**.
 1. Place an opening `<img>` tag inside the body tag.
 1. Set the `src` attribute to your GitHub profile picture: ``{{ user.avatarUrl }}``
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.

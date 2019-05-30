@@ -36,7 +36,7 @@ Apply this suggested change, or follow the instructions below if you'd like to t
 ```
 
 1. Click on **Files Changed** to see the newly added `index.html` file.
-1. Click on the :pencil: to edit the file.
+1. Click on the ellipsis (...) and select **Edit file**.
 1. Before the existing content, add an opening `<html>` tag, and an opening `<body>` tag.
 1. After the existing content, add a closing `</body>` tag, and a closing `</html>` tag.
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.

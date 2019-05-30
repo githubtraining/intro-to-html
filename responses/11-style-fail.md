@@ -8,7 +8,7 @@ Let's try again!
 ### :keyboard: Add the stylesheet
 
 1. Click on **Files Changed**.
-1. Click on the :pencil: to edit the file.
+1. Click on the ellipsis (...) and select **Edit file**.
 1. Add the link tag inside the `<head>` section of the index: `<link rel="stylesheet" href="style.css">`
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
 1. Click on **Commit changes**.

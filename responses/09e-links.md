@@ -9,7 +9,7 @@ Let's try again!
 ### :keyboard: Create links to your favorite sites
 
 1. Click on **Files Changed**.
-1. Click on the :pencil: to edit the file.
+1. Click on the ellipsis (...) and select **Edit file**.
 1. Link each of your favorite sites to their respective URLs. You can do this by adding an opening anchor tag `<a>` tag with `href` attribute with your favorite site's URL, the name of the site inside the anchor tag, and a closing anchor `</a>` tag. 
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
 1. Click on **Commit changes**.
