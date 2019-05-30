@@ -44,6 +44,7 @@ steps:
       - type: closeIssue
         issue: Welcome
         action_id: prev
+        required: false
       - type: respond
         with: 02-html-structure.md
         data:
@@ -159,6 +160,7 @@ steps:
         else:
           type: closeIssue
           issue: Add a header
+          required: false
       - type: getFileContents
         filename: index.html
         action_id: index_file
@@ -248,6 +250,7 @@ steps:
         else:
           type: closeIssue
           issue: Create a list
+          required: false
       - type: getFileContents
         filename: index.html
         action_id: index_file
