@@ -45,6 +45,10 @@ steps:
         issue: Welcome
         action_id: prev
         required: false
+      - type: createPullRequestComment
+        body: suggest-html-structure.md
+        file: index.html
+        position: 1
       - type: respond
         with: 02-html-structure.md
         data:
