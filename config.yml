@@ -44,8 +44,11 @@ steps:
       - type: closeIssue
         issue: Welcome
         action_id: prev
-      - type: respond
-        with: 02-html-structure.md
+        required: false
+      - type: createPullRequestComment
+        body: 02-html-structure.md
+        file: index.html
+        position: 1
         data:
           welcomeLink: "%actions.prev.data.html_url%"
 
@@ -76,9 +79,10 @@ steps:
           type: createReview
           body: 03e-add-html.md
           event: REQUEST_CHANGES
-      - type: createReview
-        event: COMMENT
+      - type: createPullRequestComment
         body: 03-title-tag.md
+        file: index.html
+        position: 2
 
   - title: Add a title tag
     description: Add a title tag
@@ -159,6 +163,7 @@ steps:
         else:
           type: closeIssue
           issue: Add a header
+          required: false
       - type: getFileContents
         filename: index.html
         action_id: index_file
@@ -173,9 +178,10 @@ steps:
           type: createReview
           event: REQUEST_CHANGES
           body: 05e-troubleshoot-h1.md
-      - type: createReview
-        event: COMMENT
+      - type: createPullRequestComment
         body: 06-add-image.md
+        file: index.html
+        position: 5
 
   - title: Add an image
     description: Add an image
@@ -248,6 +254,7 @@ steps:
         else:
           type: closeIssue
           issue: Create a list
+          required: false
       - type: getFileContents
         filename: index.html
         action_id: index_file
@@ -269,9 +276,10 @@ steps:
           type: createReview
           body: 08e-list.md
           event: REQUEST_CHANGES
-      - type: createReview
+      - type: createPullRequestComment
         body: 09-add-links.md
-        event: COMMENT
+        file: index.html
+        position: 7
 
   - title: Add links
     description: Add links

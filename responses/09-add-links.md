@@ -23,8 +23,14 @@ Hyperlinks allow people to navigate through pages on the web. Links are achieved
 
 ### :keyboard: Activity: Create links to your favorite sites
 
+Apply this suggested change, or follow the instructions below if you'd like to type out the code manually. Please note that the suggested change may not be in the proper place for your list, so make sure it is inside of a set of `<ol>` or `<ul>` tags.
+
+```suggestion
+      <li>My favorite site is <a href="https://github.com">GitHub</a>!</li>
+```
+
 1. Click on **Files Changed**.
-1. Click on the :pencil: pencil icon to edit the file.
+1. Click on the ellipsis (...) and select **Edit file**.
 1. In the list you just created, add a link to each of your favorite sites to their respective URLs. You can do this by adding an opening anchor tag `<a>` tag with `href` attribute with your favorite site's URL, the name of the site inside the anchor tag, and a closing anchor `</a>` tag. Here is an example of a list item with a link:
 
 {% if GHE_HOST %}
@@ -41,4 +47,4 @@ Hyperlinks allow people to navigate through pages on the web. Links are achieved
 2. Click on **Commit changes**.
 
 <hr>
-<h3 align="center">Look for my next response below</h3>
+<h3 align="center">I'll respond when I detect you've committed in this pull request.</h3>

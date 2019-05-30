@@ -11,4 +11,4 @@ Go ahead and merge this pull request. Don't forget to delete your branch!
 1. Click on **Delete branch**.
 
 <hr>
-<h3 align="center">Watch below for my response</h3>
+<h3 align="center">I'll respond when you've merged this pull request.</h3>
