@@ -41,4 +41,4 @@ Hyperlinks allow people to navigate through pages on the web. Links are achieved
 2. Click on **Commit changes**.
 
 <hr>
-<h3 align="center">Look for my next response below</h3>
+<h3 align="center">I'll respond when I detect you've committed in this pull request.</h3>

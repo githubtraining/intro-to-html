@@ -27,4 +27,4 @@ As an example, your `index.html` file might look like this:
 1. Click on **Commit changes**.
 
 <hr>
-<h3 align="center">Return to this pull request for next steps</h3>
+<h3 align="center">I'll respond when I detect you've committed in this pull request.</h3>

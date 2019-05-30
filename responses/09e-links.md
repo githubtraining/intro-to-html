@@ -15,3 +15,6 @@ Let's try again!
 1. Click on **Commit changes**.
 1. Give your pull request a title, and a comment.
 1. Click on **Create pull request.**
+
+<hr>
+<h3 align="center">I'll respond in your new pull request.</h3>

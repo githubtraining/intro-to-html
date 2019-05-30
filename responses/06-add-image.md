@@ -20,4 +20,4 @@ You'll also notice that the image tag doesn't need to close since it is consider
 1. Click on **Commit changes**.
 
 <hr>
-<h3 align="center">Watch below for my response</h3>
+<h3 align="center">I'll respond when I detect you've committed in this pull request.</h3>

@@ -14,3 +14,6 @@ Let's try again!
 1. Set the `src` attribute to your GitHub profile picture: ``{{ user.avatarUrl }}``
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
 1. Click on **Commit changes**.
+
+<hr>
+<h3 align="center">I'll respond when I detect you've committed in this pull request.</h3>
