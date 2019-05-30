@@ -12,6 +12,8 @@ You'll also notice that the image tag doesn't need to close since it is consider
 
 ### :keyboard: Activity: Add an image to your web page
 
+Apply this suggested change, or follow the instructions below if you'd like to type out the code manually.
+
 ```suggestion
 <img src="{{ user.avatarUrl }}">
 

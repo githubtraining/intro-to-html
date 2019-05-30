@@ -276,9 +276,10 @@ steps:
           type: createReview
           body: 08e-list.md
           event: REQUEST_CHANGES
-      - type: createReview
+      - type: createPullRequestComment
         body: 09-add-links.md
-        event: COMMENT
+        file: index.html
+        position: 7
 
   - title: Add links
     description: Add links
