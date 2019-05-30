@@ -23,6 +23,18 @@ In HTML, spacing doesn't really matter. We've added some tabs to make the code e
 
 ### :keyboard: Activity: Add the `html` and `body` tags to `index.html`
 
+Apply this suggested change, or follow the instructions below if you'd like to type out the code manually.
+
+```suggestion
+<html>
+
+  <body>
+    Hello there, awesome person! 
+  </body>
+
+</html>
+```
+
 1. Click on **Files Changed** to see the newly added `index.html` file.
 1. Click on the :pencil: to edit the file.
 1. Before the existing content, add an opening `<html>` tag, and an opening `<body>` tag.
