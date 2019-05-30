@@ -23,7 +23,7 @@ Hyperlinks allow people to navigate through pages on the web. Links are achieved
 
 ### :keyboard: Activity: Create links to your favorite sites
 
-Apply this suggested change, or follow the instructions below if you'd like to type out the code manually.
+Apply this suggested change, or follow the instructions below if you'd like to type out the code manually. Please note that the suggested change may not be in the proper place for your list, so make sure it is inside of a set of `<ol>` or `<ul>` tags.
 
 ```suggestion
       <li>My favorite site is <a href="https://github.com">GitHub</a>!</li>
