@@ -6,7 +6,7 @@ It's not very special looking yet, is it? Web hosts (and GitHub Pages) look for 
 
 ### :keyboard: Activity: Add `index.html`
 
-To help you get started, I have already created an `index.html` file for you on a branch called: `add-index`. All you need to do is create the pull request:
+To help you get started, I have already created an `index.html` file for you on a branch called: `add-index`. All you need to do is create the pull request. Don't worry, I'll help you!
 
 1. Create a pull request. You can either [use this direct link]({{ repoUrl }}/compare/master...add-index?expand=1), or go to the **Code** tab, click on **New Pull Request**, select **base: master**, and **compare: add-index**.
 2. Add a descriptive title to your pull request, something like "Add the index.html file".

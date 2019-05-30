@@ -26,7 +26,7 @@ steps:
         with: 00-openapr.md
         data:
           pagesUrl: "%actions.pagesUrl.data.html_url%"
-        issue: 1
+        issue: Welcome
 
   - title: Open a pull request
     description: Open a pull request.
