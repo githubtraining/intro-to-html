@@ -12,6 +12,11 @@ You'll also notice that the image tag doesn't need to close since it is consider
 
 ### :keyboard: Activity: Add an image to your web page
 
+```suggestion
+<img src="{{ user.avatarUrl }}">
+
+```
+
 1. Click on **Files Changed**.
 1. Click on the ellipsis (...) and select **Edit file**.
 1. Place an opening `<img>` tag between the body tags. Reminder: you don't need to close an `<img>` tag!

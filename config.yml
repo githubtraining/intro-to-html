@@ -178,9 +178,10 @@ steps:
           type: createReview
           event: REQUEST_CHANGES
           body: 05e-troubleshoot-h1.md
-      - type: createReview
-        event: COMMENT
+      - type: createPullRequestComment
         body: 06-add-image.md
+        file: index.html
+        position: 5
 
   - title: Add an image
     description: Add an image
