@@ -82,7 +82,7 @@ steps:
       - type: createPullRequestComment
         body: 03-title-tag.md
         file: index.html
-        position: 3
+        position: 2
 
   - title: Add a title tag
     description: Add a title tag
