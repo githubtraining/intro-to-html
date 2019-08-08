@@ -4,17 +4,17 @@
 
 This repository powers the Learning Lab course [_Introduction to HTML_](https://lab.github.com/githubtraining/introduction-to-html). 
 
-This course is made up of:
+Every Learning Lab course is made up of:
 - a [course repository](https://github.com/githubtraining/intro-to-html/), and
 - a [template repository](https://github.com/githubtraining/intro-to-html-template)
 
 The course repository is written in YAML and Markdown. The template repository could be written in any language that supports the learning objectives.
 
-This course is currently in production. It was designed to meet the learning outcomes listed in [`course-details.md`](course-details.md). 
+For more information on the goals of this course, check out the [`course-details.md`](course-details.md). 
 
 ## Contribute
 
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for how to contribute to this repository.
+See something we could improve? Check out the [`CONTRIBUTING.md`](CONTRIBUTING.md) for more information on the types of contributions that we :heart: and instructions for contributing to this course.
 
 ## License
 
