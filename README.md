@@ -14,10 +14,10 @@ For more information on the goals of this course, check out the [`course-details
 
 ## Contribute
 
-See something we could improve? Check out the [`CONTRIBUTING.md`](CONTRIBUTING.md) for more information on the types of contributions that we :heart: and instructions for contributing to this course.
+See something we could improve? Check out the contributing guide in the [community contributors repository](https://github.com/githubtraining/community-contributors/blob/master/CONTRIBUTING.md) for more information on the types of contributions we :heart: and instructions.
 
 ## License
 
-[CC-BY](../LICENSE) (c) 2019 GitHub, Inc.
+All Learning Lab course repositories are licensed under [CC-BY-4.0](../LICENSE) (c) 2019 GitHub, Inc.
 
 When using the GitHub logos, be sure to follow the [GitHub logo guidelines](https://github.com/logos)
