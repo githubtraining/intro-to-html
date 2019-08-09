@@ -16,6 +16,8 @@ For more information on the goals of this course, check out the [`course-details
 
 See something we could improve? Check out the contributing guide in the [community contributors repository](https://github.com/githubtraining/community-contributors/blob/master/CONTRIBUTING.md) for more information on the types of contributions we :heart: and instructions.
 
+We :heart: our community and take great care to ensure it is fun, safe and rewarding. Please review our [Code of Conduct](https://github.com/githubtraining/community-contributors/blob/master/CODE_OF_CONDUCT.md) for community expectations and guidelines for reporting concerns.
+
 ## License
 
 All Learning Lab course repositories are licensed under [CC-BY-4.0](../LICENSE) (c) 2019 GitHub, Inc.
