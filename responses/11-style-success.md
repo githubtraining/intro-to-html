@@ -10,4 +10,4 @@ Go ahead and merge this pull request so we can all see the final result. Don't f
 1. Click on **Delete branch**.
 
 <hr>
-<h3 align="center">Watch below for my response</h3>
+<h3 align="center">I'll respond when you've merged this pull request.</h3>

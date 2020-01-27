@@ -12,12 +12,19 @@ You'll also notice that the image tag doesn't need to close since it is consider
 
 ### :keyboard: Activity: Add an image to your web page
 
+Apply this suggested change, or follow the instructions below if you'd like to type out the code manually.
+
+```suggestion
+<img src="{{ user.avatarUrl }}">
+
+```
+
 1. Click on **Files Changed**.
-1. Click on the :pencil: to edit the file.
+1. Click on the ellipsis (...) and select **Edit file**.
 1. Place an opening `<img>` tag between the body tags. Reminder: you don't need to close an `<img>` tag!
 1. Set the `src` attribute to the image you would like to display. You can use your GitHub profile picture: `{{ user.avatarUrl }}`
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
 1. Click on **Commit changes**.
 
 <hr>
-<h3 align="center">Watch below for my response</h3>
+<h3 align="center">I'll respond when I detect you've committed in this pull request.</h3>

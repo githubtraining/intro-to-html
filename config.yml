@@ -4,7 +4,7 @@ description: If you are looking for a quick and fun introduction to the exciting
 template:
   name: intro-html
   repo: intro-to-html-template
-  description: 'A robot powered training repository :robot:'
+  description: "A robot powered training repository :robot:"
 before:
   - type: createIssue
     title: Welcome
@@ -14,91 +14,102 @@ before:
 steps:
   - title: Turn on GitHub Pages
     description: Turn on GitHub Pages in the settings page of the repository.
-    event: deployment
-    link: '{{ repoUrl }}/issues/1'
+    event: page_build
+    link: "{{ repoUrl }}/issues/1"
     actions:
+      - type: octokit
+        method: repos.getPages
+        owner: "%payload.repository.owner.login%"
+        repo: "%payload.repository.name%"
+        action_id: pagesUrl
       - type: respond
         with: 00-openapr.md
-        issue: 1
+        data:
+          pagesUrl: "%actions.pagesUrl.data.html_url%"
+        issue: Welcome
 
   - title: Open a pull request
     description: Open a pull request.
     event: pull_request.opened
-    link: '{{ repoUrl }}/issues/1'
+    link: "{{ repoUrl }}/issues/1"
     actions:
       - type: gate
-        left: '%payload.pull_request.head.ref%'
+        left: "%payload.pull_request.head.ref%"
         operator: ===
         right: add-index
         else:
         - type: respond
           with: base-branch.md
       - type: gate
-        left: '%payload.pull_request.base.ref%'
+        left: "%payload.pull_request.base.ref%"
         operator: ===
         right: master
       - type: closeIssue
         issue: Welcome
         action_id: prev
-      - type: respond
-        with: 02-html-structure.md
+        required: false
+      - type: createPullRequestComment
+        body: 02-html-structure.md
+        file: index.html
+        position: 1
         data:
-          welcomeLink: '%actions.prev.data.html_url%'
+          welcomeLink: "%actions.prev.data.html_url%"
 
   - title: Build the HTML document structure
     description: Follow the instructions to write the base structure of your HTML file
     event: pull_request.synchronize
-    link: '{{ repoUrl }}/pulls'
+    link: "{{ repoUrl }}/pulls"
     actions:
       - type: getFileContents
         filename: index.html
         action_id: index_file
       - type: htmlContainsTag
-        html: '%actions.index_file%'
+        html: "%actions.index_file%"
         tag: html
         action_id: contains_html
         required: false
       - type: htmlContainsTag
-        html: '%actions.index_file%'
+        html: "%actions.index_file%"
         tag: body
         action_id: contains_body
         required: false
       - type: gate
         every: true
         gates:
-          - left: '%actions.contains_html%'
-          - left: '%actions.contains_body%'
+          - left: "%actions.contains_html%"
+          - left: "%actions.contains_body%"
         else:
           type: createReview
           body: 03e-add-html.md
           event: REQUEST_CHANGES
-      - type: createReview
-        event: COMMENT
+      - type: createPullRequestComment
         body: 03-title-tag.md
+        file: index.html
+        position: 2
 
   - title: Add a title tag
     description: Add a title tag
     event: pull_request.synchronize
-    link: '{{ repoUrl }}/pulls'
+    link: "{{ repoUrl }}/pulls"
     actions:
       - type: getFileContents
         filename: index.html
         action_id: index_file
       - type: htmlContainsTag
-        html: '%actions.index_file%'
+        html: "%actions.index_file%"
         tag: head
         action_id: contains_head
         required: false
       - type: htmlContainsTag
-        html: '%actions.index_file%'
+        html: "%actions.index_file%"
         tag: title
         action_id: contains_title
         required: false
       - type: gate
         every: true
         gates:
-          - left: '%actions.contains_title%'
-          - left: '%actions.contains_head%'
+          - left: "%actions.contains_title%"
+          - left: "%actions.contains_head%"
         else:
           type: createReview
           event: REQUEST_CHANGES
@@ -110,77 +121,86 @@ steps:
   - title: Merge your first pull request
     description: Merge your pull request
     event: pull_request.closed
-    link: '{{ repoUrl }}/pulls'
+    link: "{{ repoUrl }}/pulls"
     actions:
       - type: gate
-        left: '%payload.pull_request.merged%'
+        left: "%payload.pull_request.merged%"
+      - type: octokit
+        method: repos.getPages
+        owner: "%payload.repository.owner.login%"
+        repo: "%payload.repository.name%"
+        action_id: pagesUrl
       - type: createIssue
         title: Add a header
         body: 05-h1-tag.md
+        data:
+          pagesUrl: "%actions.pagesUrl.data.html_url%"
         action_id: new_issue
       - type: respond
         with: next.md
         data:
-          issueURL: '%actions.new_issue.data.html_url%'
+          issueURL: "%actions.new_issue.data.html_url%"
 
   - title: Change your username to an h1 tag
     description: Change your username to an h1 tag
     event: pull_request
-    link: '{{ repoUrl }}/pulls'
+    link: "{{ repoUrl }}/pulls"
     actions:
       - type: gate
         gates:
-          - left: '%payload.action%'
+          - left: "%payload.action%"
             operator: ===
             right: opened
-          - left: '%payload.action%'
+          - left: "%payload.action%"
             operator: ===
             right: synchronize
       - type: gate
-        left: '%payload.pull_request.base.ref%'
+        left: "%payload.pull_request.base.ref%"
         operator: ===
         right: master
       - type: gate
-        left: '%payload.action%'
-        operator: '!=='
+        left: "%payload.action%"
+        operator: "!=="
         right: opened
         required: false
         else:
           type: closeIssue
           issue: Add a header
+          required: false
       - type: getFileContents
         filename: index.html
         action_id: index_file
       - type: htmlContainsTag
-        html: '%actions.index_file%'
+        html: "%actions.index_file%"
         tag: h1
         action_id: contains_h1
         required: false
       - type: gate
-        left: '%actions.contains_h1%'
+        left: "%actions.contains_h1%"
         else:
           type: createReview
           event: REQUEST_CHANGES
           body: 05e-troubleshoot-h1.md
-      - type: createReview
-        event: COMMENT
+      - type: createPullRequestComment
         body: 06-add-image.md
+        file: index.html
+        position: 5
 
   - title: Add an image
     description: Add an image
     event: pull_request.synchronize
-    link: '{{ repoUrl }}/pulls'
+    link: "{{ repoUrl }}/pulls"
     actions:
       - type: getFileContents
         filename: index.html
         action_id: index_file
       - type: htmlContainsTag
-        html: '%actions.index_file%'
+        html: "%actions.index_file%"
         tag: img
         attribute: src
         action_id: contains_img
       - type: gate
-        left: '%actions.contains_img%'
+        left: "%actions.contains_img%"
         else:
           type: createReview
           body: 06e-image.md
@@ -192,84 +212,93 @@ steps:
   - title: Merge your second pull request
     description: Merge your pull request
     event: pull_request.closed
-    link: '{{ repoUrl }}/pulls'
+    link: "{{ repoUrl }}/pulls"
     actions:
       - type: gate
-        left: '%payload.pull_request.merged%'
+        left: "%payload.pull_request.merged%"
+      - type: octokit
+        method: repos.getPages
+        owner: "%payload.repository.owner.login%"
+        repo: "%payload.repository.name%"
+        action_id: pagesUrl
       - type: createIssue
         action_id: new_issue
         title: Create a list
         body: 08-create-list.md
+        data:
+          pagesUrl: "%actions.pagesUrl.data.html_url%"
       - type: respond
         with: next.md
         data:
-          issueURL: '%actions.new_issue.data.html_url%'
+          issueURL: "%actions.new_issue.data.html_url%"
 
   - title: Create a list
     description: Create a list
     event: pull_request
-    link: '{{ repoUrl }}/pulls'
+    link: "{{ repoUrl }}/pulls"
     actions:
       - type: gate
         gates:
-          - left: '%payload.action%'
+          - left: "%payload.action%"
             operator: ===
             right: opened
-          - left: '%payload.action%'
+          - left: "%payload.action%"
             operator: ===
             right: synchronize
       - type: gate
-        left: '%payload.pull_request.base.ref%'
+        left: "%payload.pull_request.base.ref%"
         operator: ===
         right: master
       - type: gate
-        left: '%payload.action%'
-        operator: '!=='
+        left: "%payload.action%"
+        operator: "!=="
         right: opened
         required: false
         else:
           type: closeIssue
           issue: Create a list
+          required: false
       - type: getFileContents
         filename: index.html
         action_id: index_file
       - type: htmlContainsTag
-        html: '%actions.index_file%'
+        html: "%actions.index_file%"
         tag: ul
         action_id: contains_ul
         required: false
       - type: htmlContainsTag
-        html: '%actions.index_file%'
+        html: "%actions.index_file%"
         tag: ol
         action_id: contains_ol
         required: false
       - type: gate
         gates:
-          - left: '%actions.contains_ul%'
-          - left: '%actions.contains_ol%'
+          - left: "%actions.contains_ul%"
+          - left: "%actions.contains_ol%"
         else:
           type: createReview
           body: 08e-list.md
           event: REQUEST_CHANGES
-      - type: createReview
+      - type: createPullRequestComment
         body: 09-add-links.md
-        event: COMMENT
+        file: index.html
+        position: 7
 
   - title: Add links
     description: Add links
     event: pull_request.synchronize
-    link: '{{ repoUrl }}/pulls'
+    link: "{{ repoUrl }}/pulls"
     actions:
       - type: getFileContents
         filename: index.html
         action_id: index_file
       - type: htmlContainsTag
-        html: '%actions.index_file%'
+        html: "%actions.index_file%"
         tag: a
         action_id: contains_a
         required: false
       - type: gate
-        left: '%actions.contains_a%'
+        left: "%actions.contains_a%"
         else:
           type: createReview
           body: 09e-links.md
@@ -281,10 +310,10 @@ steps:
   - title: Merge your third pull request
     description: Merge your pull request
     event: pull_request.closed
-    link: '{{ repoUrl }}/pulls'
+    link: "{{ repoUrl }}/pulls"
     actions:
       - type: gate
-        left: '%payload.pull_request.merged%'
+        left: "%payload.pull_request.merged%"
       - type: mergeBranch
         head: master
         base: add-style
@@ -296,12 +325,12 @@ steps:
       - type: respond
         with: next.md
         data:
-          issueURL: '%actions.new_pr.data.html_url%'
+          issueURL: "%actions.new_pr.data.html_url%"
 
   - title: Make it beautiful
     description: Add some styles to your new site
     event: pull_request.synchronize
-    link: '{{ repoUrl }}/pulls'
+    link: "{{ repoUrl }}/pulls"
     actions:
       - type: getFileContents
         filename: index.html
@@ -309,7 +338,7 @@ steps:
       - type: gate
         left: '/<link rel="stylesheet" href="style.css">/'
         operator: test
-        right: '%actions.index%'
+        right: "%actions.index%"
         else:
           type: respond
           with: 11-style-fail.md
@@ -320,12 +349,19 @@ steps:
   - title: Merge the final pull request
     description: Get ready to show off your new skills
     event: pull_request.closed
-    link: '{{ repoUrl }}/pulls'
+    link: "{{ repoUrl }}/pulls"
     actions:
       - type: gate
-        left: '%payload.pull_request.merged%'
+        left: "%payload.pull_request.merged%"
+      - type: octokit
+        method: repos.getPages
+        owner: "%payload.repository.owner.login%"
+        repo: "%payload.repository.name%"
+        action_id: pagesUrl
       - type: respond
         with: 12-big-finish.md
+        data:
+          pagesUrl: "%actions.pagesUrl.data.html_url%"
 
-tags: 
+tags:
   - GitHub Pages
