@@ -276,6 +276,18 @@ steps:
           type: createReview
           body: 08e-list.md
           event: REQUEST_CHANGES
+      - type: htmlContainsTag
+        html: "%actions.index_file%"
+        tag: li
+        action_id: contains_li
+        required: false
+      - type: gate
+        gates:
+          - left: "%actions.contains_li%"
+        else:
+          type: createReview
+          body: 08e-list.md
+          event: REQUEST_CHANGES
       - type: createPullRequestComment
         body: 09-add-links.md
         file: index.html
