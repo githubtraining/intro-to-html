@@ -280,7 +280,7 @@ steps:
         html: "%actions.index_file%"
         tag: li
         action_id: contains_li
-        required: true
+        required: false
       - type: gate
         gates:
           - left: "%actions.contains_li%"
