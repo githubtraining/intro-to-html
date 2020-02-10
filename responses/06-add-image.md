@@ -12,7 +12,7 @@ You'll also notice that the image tag doesn't need to close since it is consider
 
 ### :keyboard: Activity: Add an image to your web page
 
-Apply this suggested change, or follow the instructions below if you'd like to type out the code manually.
+Follow the instructions below to add an image.  You can use your GitHub avatar image (suggested below) or link to your image of choice.
 
 ```suggestion
 <img src="{{ user.avatarUrl }}">
