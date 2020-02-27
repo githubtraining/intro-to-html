@@ -36,5 +36,3 @@ This makes use of the following open source projects. Consider exploring these r
 
 New developers, new GitHub users, students, managers, teams
 
-<hr>
-This course has a dedicated message board on the [GitHub Community]({{ communityBoard }}) website. If you want to discuss this course with GitHub Trainers or other participants create a post over there. The message board can also be used to troubleshoot any issue you encounter while taking this course.
