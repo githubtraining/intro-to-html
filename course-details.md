@@ -25,7 +25,7 @@ And when you're done you'll be able to:
 - Interactive [slideshow](https://githubtraining.github.io/github-slideshow-demo/) deployed to GitHub Pages.
 
 ## Prerequisites
-None. This course is a great introduction for your first day on GitHub.
+None. This course is a great introduction to HTML.
 
 ## Projects used
 This makes use of the following open source projects. Consider exploring these repos and maybe even making contributions!
