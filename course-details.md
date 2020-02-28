@@ -19,10 +19,10 @@ And when you're done you'll be able to:
 - Deploy a web page to GitHub pages
 
 ## What you'll build
-![a gif of a slide show running on a browser](https://user-images.githubusercontent.com/16547949/69274863-44362880-0ba9-11ea-98f6-b58cfc9eab02.gif)
+![a custom website](https://user-images.githubusercontent.com/16547949/41006151-5e97deee-68ee-11e8-8b52-84f38cd3e567.png)
 
-- Completed [source repository](https://github.com/githubtraining/github-slideshow-demo/)
-- Interactive [slideshow](https://githubtraining.github.io/github-slideshow-demo/) deployed to GitHub Pages.
+- Completed [source repository](https://github.com/githubtraining/intro-html-demo)
+- Live [web page](https://githubtraining.github.io/intro-html-demo/) deployed to GitHub Pages.
 
 ## Prerequisites
 None. This course is a great introduction to HTML.
