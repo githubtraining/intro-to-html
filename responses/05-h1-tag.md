@@ -11,7 +11,7 @@ Headers create prominent text in the body of your web page. Headers come in diff
 ### :keyboard: Create a header for your web page
 
 
-1. Edit the `index.html` file in your master branch by [using this direct link]({{ repoUrl }}/edit/master/index.html) or going to the **Code** tab, clicking on the `index.html` file, clicking the pencil :pencil: to edit the HTML.
+1. Edit the `index.html` file in your main branch by [using this direct link]({{ repoUrl }}/edit/main/index.html) or going to the **Code** tab, clicking on the `index.html` file, clicking the pencil :pencil: to edit the HTML.
 2. Between the body tags, add an opening `<h1>` tag, some content for the header, and a closing `</h1>` tag. 
 3. In the _Commit changes_ section, enter a commit message that describes what you've done.
 4. Ensure you've selected _Create a new branch for this commit and start a pull request_.
