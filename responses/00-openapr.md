@@ -8,7 +8,7 @@ It's not very special looking yet, is it? Web hosts (and GitHub Pages) look for 
 
 To help you get started, I have already created an `index.html` file for you on a branch called: `add-index`. All you need to do is create the pull request. Don't worry, I'll help you!
 
-1. Create a pull request. You can either [use this direct link]({{ repoUrl }}/compare/master...add-index?expand=1), or go to the **Code** tab, click on **New Pull Request**, select **base: master**, and **compare: add-index**.
+1. Create a pull request. You can either [use this direct link]({{ repoUrl }}/compare/main...add-index?expand=1), or go to the **Code** tab, click on **New Pull Request**, select **base: main**, and **compare: add-index**.
 2. Add a descriptive title to your pull request, something like "Add the index.html file".
 3. Add a descriptive body to your pull request.
 4. Click **Create pull request**.

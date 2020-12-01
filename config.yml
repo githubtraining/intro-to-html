@@ -39,7 +39,7 @@ steps:
       - type: gate
         left: "%payload.pull_request.base.ref%"
         operator: ===
-        right: master
+        right: main
       - type: closeIssue
         issue: Welcome
         action_id: prev
@@ -153,7 +153,7 @@ steps:
       - type: gate
         left: "%payload.pull_request.base.ref%"
         operator: ===
-        right: master
+        right: main
       - type: gate
         left: "%payload.action%"
         operator: "!=="
@@ -244,7 +244,7 @@ steps:
       - type: gate
         left: "%payload.pull_request.base.ref%"
         operator: ===
-        right: master
+        right: main
       - type: gate
         left: "%payload.action%"
         operator: "!=="
@@ -323,7 +323,7 @@ steps:
       - type: gate
         left: "%payload.pull_request.merged%"
       - type: mergeBranch
-        head: master
+        head: main
         base: add-style
       - type: createPullRequest
         title: Add some style to your page

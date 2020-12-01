@@ -42,7 +42,7 @@ For the next exercise, you are going to create a list of your favorite websites.
 
 ### :keyboard: Activity: Create a list of your favorite sites
 
-1. Edit the `index.html` file in your master branch by [using this direct link]({{ repoUrl }}/edit/master/index.html) or going to the **Code** tab, clicking on the `index.html` file, clicking the pencil :pencil: to edit the HTML.
+1. Edit the `index.html` file in your main branch by [using this direct link]({{ repoUrl }}/edit/main/index.html) or going to the **Code** tab, clicking on the `index.html` file, clicking the pencil :pencil: to edit the HTML.
 1. Inside the body tag, create a list, either ordered or unordered, of your favorite sites on the internet.
 1. In the _Commit changes_ section, enter a commit message that describes what you've done.
 1. Ensure you've selected _Create a new branch for this commit and start a pull request_.

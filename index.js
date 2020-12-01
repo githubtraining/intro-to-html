@@ -51,7 +51,7 @@ async function mergeHandler (context, yes, no) {
 module.exports = course => {
   course.before(async context => {
     await context.github.repos.updateBranchProtection(context.repo({
-      branch: 'master',
+      branch: 'main',
       required_status_checks: null,
       enforce_admins: true,
       required_pull_request_reviews: {},
@@ -257,7 +257,7 @@ module.exports = course => {
       course.log(`New blob after replacement: ${newBlob}`)
 
       // await context.github.repos.removeBranchProtection(context.repo({
-      //   branch: 'master'
+      //   branch: 'main'
       // }))
 
       const rootTree = await context.github.gitdata.getTree(context.repo({
@@ -273,11 +273,11 @@ module.exports = course => {
       const encodedBlob = Buffer.from(newBlob).toString('base64')
 
       await context.github.repos.removeBranchProtection(context.repo({
-        branch: 'master'
+        branch: 'main'
       }))
 
       await context.github.repos.merge(context.repo({
-        base: 'master',
+        base: 'main',
         head: 'add-style'
       }))
 

@@ -19,7 +19,7 @@ It isn't enough to simply create a webpage on GitHub. You must deploy your webpa
 ## :keyboard: Activity: Turn on GitHub Pages
 
 1. Under your repository name, click [**Settings**]({{ repoUrl }}/settings).
-1. In the **GitHub Pages** section, use the **Select source** drop-down menu to select `master` as your GitHub Pages publishing source.
+1. In the **GitHub Pages** section, use the **Select source** drop-down menu to select `main` as your GitHub Pages publishing source.
 1. Return to this issue.
 
 > _I may take up to a minute to respond as I wait for GitHub Pages to create a deployment of your repository. If you don't see anything after a minute, refresh this page_.
